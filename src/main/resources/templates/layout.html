@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <title>DPlanner</title>
+    <meta th:insert="~{fragments/meta.html}"/>
+
+</head>
+
+<body>
+<header th:insert="~{fragments/navbar.html}"></header>
+
+<div class="container mt-2">
+    <section layout:fragment="content">
+        <p>Layout Page content goes here</p>
+    </section>
+</div>
+
+
+<div th:insert="~{fragments/page_bottom.html}"></div>
+
+</body>
+
+</html>
