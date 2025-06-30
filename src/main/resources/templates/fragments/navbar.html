@@ -1,0 +1,47 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="/">DPlanner</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+			data-bs-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item"><a class="nav-link"
+					th:classappend="${currentUrl.equals('/organizations') ? 'active' : 'inactive'}"
+					aria-current="page" href="/organizations"
+					th:text="#{organizations.organizations}"></a></li>
+				<li class="nav-item"><a class="nav-link"
+					th:classappend="${currentUrl.equals('/employees') ? 'active' : 'inactive'}"
+					aria-current="page" href="/employees" th:text="#{employees}"></a></li>
+				<li class="nav-item"><a class="nav-link"
+					th:classappend="${currentUrl.equals('/teams') ? 'active' : 'inactive'}"
+					aria-current="page" href="/teams" th:text="#{teams.teams}"></a></li>
+				<li class="nav-item"><a class="nav-link"
+					th:classappend="${currentUrl.equals('/roster') ? 'active' : 'inactive'}"
+					aria-current="page" href="/roster" th:text="#{roster.roster}"></a></li>
+				<!--        <li class="nav-item">-->
+				<!--          <a class="nav-link"  th:classappend="${currentUrl.equals('/contract/add') ? 'active' : 'inactive'}" href="/contract/add" th:text="#{contract.add}"></a>-->
+				<!--        </li>-->
+			</ul>
+			<span class="navbar-text">
+				<div sec:authorize="isAnonymous()">
+					<a href="/oauth2/authorization/google" role="button"
+						class="btn btn-sm btn-primary btn-lg active"
+						th:text="#{generic.login}"></a>
+				</div>
+				<div sec:authorize="isAuthenticated()">
+					<form class="form-signin" method="post" action="/logout">
+						<input name="_csrf" type="hidden" th:value="${_csrf.token}">
+						<button class="btn btn-sm btn-primary btn-block" type="submit"
+							th:text="#{generic.logout}"></button>
+					</form>
+				</div>
+			</span>
+		</div>
+	</div>
+</nav>
+</html>
