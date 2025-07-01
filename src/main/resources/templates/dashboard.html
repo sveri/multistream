@@ -9,28 +9,10 @@
 
 <body>
 
-	<h1>Dashboard</h1>
+	<section layout:fragment="content">
 
-	<div th:if="${isAuthenticated}">
-		Welcome, <span th:text="${currentUser.displayName}">User</span>!
-	</div>
-	<div th:unless="${isAuthenticated}">
-		<a href="/oauth2/authorization/twitch">Login with Twitch</a>
-	</div>
-
-	<!-- 	<div th:if="${currentUser.isAuthenticated}"> -->
-	<!-- 		Welcome, <span th:text="${currentUser.displayName}">User</span>! -->
-	<!-- 	</div> -->
-	<!-- 	<div th:unless="${currentUser.isAuthenticated}"> -->
-	<!-- 		<a href="/oauth2/authorization/twitch">Login with Twitch</a> -->
-	<!-- 	</div> -->
-
-
-	<!-- Or logout form (recommended for better security) -->
-	<form action="/logout" method="post">
-		<input type="hidden" name="_csrf" th:value="${_csrf.token}" />
-		<button type="submit">Logout</button>
-	</form>
+		<h1>Dashboard</h1>
+	</section>
 
 </body>
 

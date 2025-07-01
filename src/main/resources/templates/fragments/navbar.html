@@ -11,21 +11,12 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item"><a class="nav-link"
-					th:classappend="${currentUrl.equals('/organizations') ? 'active' : 'inactive'}"
-					aria-current="page" href="/organizations"
-					th:text="#{organizations.organizations}"></a></li>
+					th:classappend="${currentUrl.equals('dashboard') ? 'active' : 'inactive'}"
+					aria-current="page" href="/dashboard"
+					th:text="#{dashboard.dashboard}"></a></li>
 				<li class="nav-item"><a class="nav-link"
-					th:classappend="${currentUrl.equals('/employees') ? 'active' : 'inactive'}"
-					aria-current="page" href="/employees" th:text="#{employees}"></a></li>
-				<li class="nav-item"><a class="nav-link"
-					th:classappend="${currentUrl.equals('/teams') ? 'active' : 'inactive'}"
-					aria-current="page" href="/teams" th:text="#{teams.teams}"></a></li>
-				<li class="nav-item"><a class="nav-link"
-					th:classappend="${currentUrl.equals('/roster') ? 'active' : 'inactive'}"
-					aria-current="page" href="/roster" th:text="#{roster.roster}"></a></li>
-				<!--        <li class="nav-item">-->
-				<!--          <a class="nav-link"  th:classappend="${currentUrl.equals('/contract/add') ? 'active' : 'inactive'}" href="/contract/add" th:text="#{contract.add}"></a>-->
-				<!--        </li>-->
+					th:classappend="${currentUrl.equals('/settings') ? 'active' : 'inactive'}"
+					aria-current="page" href="/settings" th:text="#{settings}"></a></li>
 			</ul>
 			<span class="navbar-text">
 				<div th:unless="${isAuthenticated}">
