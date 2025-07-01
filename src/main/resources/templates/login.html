@@ -1,50 +1,17 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
 
 <head>
-    <title>Multistream - Login</title>
+<title>Multistream - Login</title>
 </head>
 
 <body>
 
-<h1>Login</h1>
-    <a href="/oauth2/authorization/twitch">Login with Twitch</a>
-    
-        <!-- Simple logout link -->
-    <a href="/logout">Logout</a>
-    
-    <!-- Or logout form (recommended for better security) -->
-    <form action="/logout" method="post">
-        <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
-        <button type="submit">Logout</button>
-    </form>
+	<h1>Login</h1>
+	<a href="/oauth2/authorization/twitch">Login with Twitch</a>
 
-<section layout:fragment="content">
-    <a href="/teams/add" role="button" th:text="#{teams.add}" class="btn btn-sm btn-primary mb-3"></a>
-
-    <h2 th:text="#{teams.teams}" class=""></h2>
-
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col" th:text="#{generic.name}"></th>
-            <th scope="col" th:text="#{generic.description}"></th>
-            <th scope="col" th:text="#{organizations.organization}"></th>
-            <th scope="col"></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="team: ${teams}">
-            <td th:text="${team.name}"></td>
-            <td th:text="${team.description}"></td>
-            <td th:text="${team.organizationName}"></td>
-            <td><a class="btn btn-sm btn-primary" th:href="@{/teams/edit/{id}(id=${team.id})}"
-                   role="button" th:text="#{generic.edit}"></a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</section>
 
 </body>
 
