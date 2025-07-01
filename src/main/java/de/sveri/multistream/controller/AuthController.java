@@ -33,7 +33,6 @@ public class AuthController {
 		OAuth2User user = token.getPrincipal();
 
 		model.addAttribute("username", user.getAttribute("display_name"));
-		model.addAttribute("twitchId", user.getAttribute("id"));
 
 		return "dashboard";
 	}
