@@ -12,6 +12,30 @@
 	<section layout:fragment="content">
 
 		<h1>Dashboard</h1>
+
+		<div class="container mt-5">
+			<div class="row justify-content-center">
+				<div class="col-md-6">
+					<div class="card">
+						<div class="card-header">
+							<h4 class="card-title mb-0">Update Title</h4>
+						</div>
+						<div class="card-body">
+							<form th:action="@{/update/title}" method="post">
+								<div class="mb-3">
+									<label for="title" class="form-label">Title</label> <input
+										type="text" class="form-control" id="title" name="title"
+										placeholder="Enter title" required>
+								</div>
+								<div class="d-grid">
+									<button type="submit" class="btn btn-primary">Update</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 
 </body>

@@ -18,7 +18,7 @@ public class SecurityConfig {
 	SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.authorizeHttpRequests(authz -> authz.requestMatchers("/", "/login", "/error", "/webjars/**").permitAll()
 				.anyRequest().authenticated())
-				.oauth2Login(oauth2 -> oauth2.loginPage("/login").defaultSuccessUrl("/dashboard", true)
+				.oauth2Login(oauth2 -> oauth2.loginPage("/login").defaultSuccessUrl("/oauth/success", true)
 						.userInfoEndpoint(userInfo -> userInfo.userService(twitchOAuth2UserService)))
 				.logout(logout -> logout.logoutUrl("/logout").logoutSuccessUrl("/").invalidateHttpSession(true)
 						.clearAuthentication(true).deleteCookies("JSESSIONID"));
