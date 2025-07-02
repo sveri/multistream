@@ -23,10 +23,6 @@ public class TwitchApiService {
 		this.webClient = WebClient.builder().baseUrl(TWITCH_API_BASE_URL).build();
 	}
 
-	/**
-	 * Update channel information using WebClient
-	 */
-//	public void updateChannel(String accessToken, String broadcasterId, UpdateChannelRequest request) {
 	public void updateChannelTitle(String accessToken, String broadcasterId, String title) {
 		UpdateChannelRequest request = new UpdateChannelRequest(null, title);
 		try {
@@ -39,9 +35,6 @@ public class TwitchApiService {
 		}
 	}
 
-	/**
-	 * Get current user information using WebClient
-	 */
 	public TwitchUserInfo getCurrentUser(String accessToken) {
 		try {
 			TwitchUserResponse response = webClient.get().uri("/users").header("Authorization", "Bearer " + accessToken)
@@ -58,9 +51,6 @@ public class TwitchApiService {
 		}
 	}
 
-	/**
-	 * Get channel information using WebClient
-	 */
 	public TwitchChannelInfo getChannelInfo(String accessToken, String broadcasterId) {
 		try {
 			TwitchChannelResponse response = webClient.get().uri("/channels?broadcaster_id=" + broadcasterId)
