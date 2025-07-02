@@ -25,6 +25,7 @@ import jakarta.transaction.Transactional;
 public class DatabaseOAuth2AuthorizedClientService implements OAuth2AuthorizedClientService {
 
 	private final OAuth2AuthorizedClientRepository repository;
+
 	private final ClientRegistrationRepository clientRegistrationRepository;
 
 	public DatabaseOAuth2AuthorizedClientService(OAuth2AuthorizedClientRepository repository,
